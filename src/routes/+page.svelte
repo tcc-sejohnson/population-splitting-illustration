@@ -9,7 +9,7 @@
 	<div class="legend">
 		<p>Percentage targeted: {pctTargeted * 100}%</p>
 		<p>Population: {width * height}</p>
-		<p>Number targeted: {width * height * pctTargeted}</p>
+		<p>Approx. number targeted: {width * height * pctTargeted}</p>
 		<p>Number targeted on left: {targetedOnLeft}</p>
 		<p>Number targeted on right: {targetedOnRight}</p>
 		<button on:click={() => invalidateAll()}>Reset population</button>
