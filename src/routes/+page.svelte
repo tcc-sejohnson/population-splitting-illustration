@@ -1,31 +1,8 @@
 <script lang="ts">
-	const width = 100;
-	const height = 100;
-	const pctTargeted = 0.3;
+	import { invalidateAll } from '$app/navigation';
 
-	let grid: Array<Array<boolean>>;
-	let targetedOnLeft = 0;
-	let targetedOnRight = 0;
-
-	function reset() {
-		grid = [];
-		targetedOnLeft = 0;
-		targetedOnRight = 0;
-		for (let i = 0; i < height; i++) {
-			grid[i] = [];
-			for (let j = 0; j < width; j++) {
-				const targeted = Math.random() <= pctTargeted;
-				grid[i][j] = targeted;
-				if (j < width / 2 && targeted) {
-					targetedOnLeft++;
-				} else if (targeted) {
-					targetedOnRight++;
-				}
-			}
-		}
-	}
-
-	reset();
+	export let data;
+	$: ({ width, height, pctTargeted, grid, targetedOnLeft, targetedOnRight } = data);
 </script>
 
 <div class="wrapper">
@@ -35,7 +12,7 @@
 		<p>Number targeted: {width * height * pctTargeted}</p>
 		<p>Number targeted on left: {targetedOnLeft}</p>
 		<p>Number targeted on right: {targetedOnRight}</p>
-		<button on:click={reset}>Reset population</button>
+		<button on:click={() => invalidateAll()}>Reset population</button>
 	</div>
 	<svg viewBox="0 0 {width} {height}">
 		{#each grid as row, x}
