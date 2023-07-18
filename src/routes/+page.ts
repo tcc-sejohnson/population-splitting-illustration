@@ -1,3 +1,5 @@
+export const ssr = false;
+
 export function load() {
 	const width = 100;
 	const height = 100;
@@ -5,6 +7,8 @@ export function load() {
 	const grid: Array<Array<boolean>> = [];
 	let targetedOnLeft = 0;
 	let targetedOnRight = 0;
+
+	console.log('before');
 
 	for (let i = 0; i < height; i++) {
 		grid[i] = [];
@@ -18,6 +22,8 @@ export function load() {
 			}
 		}
 	}
+
+	console.log('after');
 
 	return {
 		width,
