@@ -8,8 +8,6 @@ export function load() {
 	let targetedOnLeft = 0;
 	let targetedOnRight = 0;
 
-	console.log('before');
-
 	for (let i = 0; i < height; i++) {
 		grid[i] = [];
 		for (let j = 0; j < width; j++) {
@@ -22,8 +20,6 @@ export function load() {
 			}
 		}
 	}
-
-	console.log('after');
 
 	return {
 		width,
