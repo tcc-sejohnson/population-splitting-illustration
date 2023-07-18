@@ -1,5 +1,3 @@
-export const ssr = false;
-
 export function load() {
 	const width = 100;
 	const height = 100;
