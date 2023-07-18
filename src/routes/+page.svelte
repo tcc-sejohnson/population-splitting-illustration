@@ -30,6 +30,7 @@
 		height: 100vh;
 		max-width: max-content;
 		margin: auto;
+		padding: 16px;
 		display: flex;
 		flex-direction: column;
 	}
